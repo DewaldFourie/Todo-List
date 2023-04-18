@@ -1,0 +1,95 @@
+
+
+#container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 10% 85% 5%;
+}
+
+.header {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+#projects {
+    width: 30%;
+}
+
+#form-project {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+#project-name {
+    width: 70%;
+    border-style: hidden;
+    border-bottom: solid blue;
+    padding: 5px;
+    width: 60%;
+    height: 25px;
+}
+
+#tasks {
+    width: 70%;
+    
+}
+
+#form-task {
+    display: flex;
+    padding: 30px;
+}
+
+#task-name {
+    border-style: hidden;
+    border-bottom: solid blue;
+    padding: 5px;
+    width: 60%;
+    height: 25px;
+    margin-left: 15px;
+    margin-right: 100px;
+}
+
+#task-date {
+    margin-right: 30px;
+}
+
+#task-priority {
+    margin-right: 30px;
+    width: 120px;
+    border: none;
+    background-color: white;
+    border-bottom: solid blue;
+}
+
+.task-submit-btn {
+    width: 70px;
+}
+
+.card {
+    background-color: lightgray;
+    min-height: 150px;
+}
+
+.popUp {
+    display: none;
+}
+
+.footer {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

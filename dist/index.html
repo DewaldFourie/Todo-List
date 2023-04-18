@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ToDo-List</title>
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <p>Welcome <span class="user-name">User</span></p>
+        </div>
+        <div class="main">
+            <div id="projects">
+                <form action="" id="form-project">
+                    <input type="text", name="project-name", id="project-name", placeholder="New Project Name">
+                    <button type="submit" value="Create new">Create new</button>
+                </form>
+                <div class="card"></div>
+            </div>
+            <div id="tasks" class="card">
+                <form action="" id="form-task">
+                    <input type="text", name="task-name", id="task-name", placeholder="Task">
+                    <input type="date", name="task-date", id="task-date">
+                    <select name="task-priority" id="task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit" class="task-submit-btn" value="+">+</button>
+                </form>
+                <div id="task-container"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <span class="footer-text">Built by ©Dewald Fourie 2023</span>
+        </div>
+        <div id="popUp" class="popUp">
+            <div class="popUp-content">
+                <form action="" id="form-edit">
+                    <div class="form-edit-top">
+                        <input type="text" name="task-name" id="task-name-edit" placeholder="Task">
+                        <input type="date", name="task-date", id="task-date-edit">
+                        <select name="task-priority" id="task-priority-edit">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                        <button type="submit" value="save">Save</button>
+                    </div>
+                    <div class="form-edit-bottom">
+                        <button id="close-edit">X</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
