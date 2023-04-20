@@ -11,20 +11,57 @@
 }
 
 .header {
-    background-color: beige;
+    background-color: rgb(38, 38, 38);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    color: white;
+    font-size: 24px;
+    padding: 0 20px;
+}
+
+.app-name {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.settings {
+    cursor: grab;
 }
 
 .main {
     display: flex;
     gap: 20px;
     padding: 30px;
+    background-color: whitesmoke;
 }
 
+/* Projects Container Styling */
 #projects {
     width: 30%;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.project.active {
+    background-color: rgb(38, 38, 38);
+    color: white;
+}
+
+.project.active:hover {
+    border: none;
+}
+
+.project:hover {
+    border: 1px solid rgb(38, 38, 38);
+    cursor: pointer;
 }
 
 #form-project {
@@ -34,17 +71,27 @@
 }
 
 #project-name {
+    background-color: whitesmoke;
     width: 70%;
     border-style: hidden;
-    border-bottom: solid blue;
+    border-bottom: solid  rgb(38, 38, 38);
     padding: 5px;
     width: 60%;
     height: 25px;
 }
 
+.project-submit-btn {
+    background-color: rgb(38, 38, 38);
+    color: white;
+    border-radius: 25px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+/* Tasks Container styling */
 #tasks {
     width: 70%;
-    
 }
 
 #form-task {
@@ -54,7 +101,7 @@
 
 #task-name {
     border-style: hidden;
-    border-bottom: solid blue;
+    border-bottom: solid  rgb(38, 38, 38);
     padding: 5px;
     width: 60%;
     height: 25px;
@@ -64,6 +111,10 @@
 
 #task-date {
     margin-right: 30px;
+    width: 130px;
+    border: none;
+    border-bottom: solid;
+    padding-left: 15px;
 }
 
 #task-priority {
@@ -71,24 +122,185 @@
     width: 120px;
     border: none;
     background-color: white;
-    border-bottom: solid blue;
+    border-bottom: solid  rgb(38, 38, 38);
+    padding-left: 15px;
 }
 
 .task-submit-btn {
     width: 70px;
+    background-color: rgb(38, 38, 38);
+    color: white;
+    font-size: 20px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
-.card {
-    background-color: lightgray;
-    min-height: 150px;
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 20px;
 }
+
+.task-name-div {
+    display: flex;
+    gap: 20px;
+}
+
+.task-info-div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #5e5e5e;
+  }
+
+.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    border: 1px solid;
+    width: 70px;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.high {
+    border: 1px solid red;
+}
+.high-div {
+    border-left: 4px solid red;
+}
+
+.medium {
+    border: 1px solid rgb(255, 204, 0);
+}
+.medium-div {
+    border-left: 4px solid rgb(255, 204, 0);
+}
+
+.low {
+    border: 1px solid green;
+}
+.low-div {
+    border-left: 4px solid green;
+}
+
+/* Edit Popup Styling */
 
 .popUp {
-    display: none;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
+.popUp-content {
+    margin: auto;
+    padding: 5px 5px ;
+    background-color: white;
+    border-radius: 8px;
+}
+
+#form-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-edit-top {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.form-edit-middle {
+    display: flex;
+    margin: 45px 50px 10px;
+    gap: 30px;
+}
+
+#task-name-edit {
+    border: hidden;
+    border-bottom: 1px solid  rgb(38, 38, 38);
+    height: 25px;
+}
+
+#task-date-edit {
+    border: hidden;
+    border-bottom: 1px solid  rgb(38, 38, 38);
+}
+
+#task-priority-edit {
+    border: hidden;
+    border-bottom: 1px solid  rgb(38, 38, 38);
+    background-color: white;
+    width: 100px;
+    padding-left: 10px;
+}
+
+.form-edit-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edit-save-btn {
+    background-color: rgb(38, 38, 38);
+    color: white;
+    border-radius: 25px;
+    font-size: 15px;
+    padding: 5px;
+    width: 120px;
+    cursor: pointer;
+}
+
+#close-edit {
+    background-color: rgb(38, 38, 38);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/*--------------------------------------------- */
+.card {
+    background-color: rgb(255, 255, 255);
+    min-height: 150px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.delete-icon {
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+}
+
+.edit-icon {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+
 .footer {
-    background-color: beige;
+    background-color: rgb(38, 38, 38);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;

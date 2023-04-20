@@ -1,6 +1,7 @@
 import { Project, projectsArray, currentProject } from "./project";
 import { Task } from "./task";
 
+
 const $projectForm = document.getElementById("form-project");
 
 $projectForm.addEventListener("submit", (e) => {
@@ -17,7 +18,8 @@ $projectForm.addEventListener("submit", (e) => {
     Project.setCurrentProject(project);
     let projects = document.querySelectorAll(".project");
     projects[projects.length - 1].classList.add("active");
-    projects[projects.length - 1].lastChild.src = "";
+    projects[projects.length - 1].lastChild.src = './assets/delete-light.png';
+    $projectForm.reset()
 });
 
 const $taskForm = document.getElementById("form-task");
@@ -39,7 +41,14 @@ $taskForm.addEventListener("submit", (e) => {
     const task = new Task($title.value, $date.value, $priority.value);
     currentProject.tasks.push(task)
     task.render();
+    $taskForm.reset();
 });
+
+const $settings = document.querySelector('.settings');
+$settings.addEventListener("click", (e) => {
+    e.preventDefault();
+    alert("Add a settings module if needed.")
+})
 
 Project.renderProjects();
 const user = prompt('Enter your Name:');

@@ -13,7 +13,7 @@ class Project {
         const $div = createHtmlElement("div", this.id, ['project'], null);
         const $title = createHtmlElement("p", null, ['project-title'], this.title);
         const $delete = createHtmlElement("img", null, ['delete-icon'], null);
-        $delete.src = "";
+        $delete.src = './assets/delete-dark.png';
         $delete.addEventListener("click", () => {
             this.delete();
         });
@@ -24,15 +24,15 @@ class Project {
         $project.appendChild($div);
         $div.addEventListener("click", () => {
             currentProject = this;
-            currentProject.active = false;
+            currentProject.active = false ;
             this.renderTasks();
             let projectClass = document.querySelectorAll(".project");
             projectClass.forEach((p) => (p.classList.value = "project"));
-            let deleteBtns = document.querySelectorAll(".delete");
-            deleteBtns.forEach((btn) => btn.src = "");
+            let deleteBtns = document.querySelectorAll(".delete-icon");
+            deleteBtns.forEach((btn) => (btn.src = './assets/delete-dark.png'));
             if (!$div.classList.value.includes("active")) {
                 $div.classList.add("active");
-                $delete.src = "";
+                $delete.src = './assets/delete-light.png';
             } 
             else return;
         });

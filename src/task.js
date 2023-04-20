@@ -1,6 +1,7 @@
 import { createHtmlElement, setId } from "./dom";
 import { currentProject } from "./project";
 
+
 const $project = document.querySelector('#task-container');
 
 class Task {
@@ -22,10 +23,10 @@ class Task {
         const $divTaskInfo = createHtmlElement("div", null, ["task-info-div"], null);
         const $date = createHtmlElement("p", null, null, this.date);
         const $badge = createHtmlElement("div", null, ["badge"], this.priority);
-        const $delete = createHtmlElement("img", null, ["delete"], null);
-        $delete.src = "";
-        const $edit = createHtmlElement("img", null, ["edit"], null);
-        $edit.src = "";
+        const $delete = createHtmlElement("img", null, ["delete-icon"], null);
+        $delete.src = './assets/delete-dark.png';
+        const $edit = createHtmlElement("img", null, ["edit-icon"], null);
+        $edit.src = './assets/edit-task.png';
         $edit.addEventListener("click", () => {
             this.edit();
         });
@@ -35,8 +36,8 @@ class Task {
         // Adding the date, badge, delete and edit features to the infoDiv
         $divTaskInfo.appendChild($date);
         $divTaskInfo.appendChild($badge);
-        $divTaskInfo.appendChild($delete);
         $divTaskInfo.appendChild($edit);
+        $divTaskInfo.appendChild($delete);
         // Adding the NameDiv and infoDiv to the div(TASK) with unique id.
         $div.appendChild($divTaskName);
         $div.appendChild($divTaskInfo);
@@ -46,8 +47,20 @@ class Task {
         $checkbox.addEventListener("change", () => {
             $taskName.classList.toggle("done");
         });
-        if (this.priority === "urgent"){
-            $badge.classList.add("urgent");
+        if (this.priority === "high"){
+            $badge.textContent = $badge.textContent.charAt(0).toUpperCase() + $badge.textContent.slice(1);
+            $badge.classList.add("high");
+            $div.classList.add("high-div")
+        }
+        if (this.priority === "medium"){
+            $badge.textContent = $badge.textContent.charAt(0).toUpperCase() + $badge.textContent.slice(1);
+            $badge.classList.add("medium");
+            $div.classList.add("medium-div")
+        }
+        if (this.priority === "low"){
+            $badge.textContent = $badge.textContent.charAt(0).toUpperCase() + $badge.textContent.slice(1);
+            $badge.classList.add("low");
+            $div.classList.add("low-div")
         }
         $delete.addEventListener("click", () => {
             this.delete();
@@ -62,12 +75,13 @@ class Task {
     edit() {
         const $popUp = document.getElementById("popUp");
         $popUp.style.display = "flex";
+        const $form = document.getElementById("form-edit");
         const $closeBtn = document.getElementById("close-edit");
         $closeBtn.addEventListener("click", () => {
+            $form.reset();
             $popUp.style.display = "none";
-            currentProject.renderTasks();
         });
-        const $form = document.getElementById("form-edit");
+       
         $form.addEventListener("submit", (e) => {
             e.preventDefault();
             const $title = document.getElementById("task-name-edit");

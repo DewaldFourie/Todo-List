@@ -10,13 +10,15 @@
 <body>
     <div id="container">
         <div class="header">
-            <p>Welcome <span class="user-name">User</span></p>
+            <p class="app-name">ToDo</p>
+            <p>Welcome, <span class="user-name">User</span></p>
+            <p class="settings">Settings</p>
         </div>
         <div class="main">
             <div id="projects">
                 <form action="" id="form-project">
                     <input type="text", name="project-name", id="project-name", placeholder="New Project Name">
-                    <button type="submit" value="Create new">Create new</button>
+                    <button type="submit" value="Create new" class="project-submit-btn">Create new</button>
                 </form>
                 <div class="card"></div>
             </div>
@@ -39,8 +41,11 @@
         </div>
         <div id="popUp" class="popUp">
             <div class="popUp-content">
+                <div class="form-edit-top">
+                    <button id="close-edit">X</button>
+                </div>
                 <form action="" id="form-edit">
-                    <div class="form-edit-top">
+                    <div class="form-edit-middle">
                         <input type="text" name="task-name" id="task-name-edit" placeholder="Task">
                         <input type="date", name="task-date", id="task-date-edit">
                         <select name="task-priority" id="task-priority-edit">
@@ -48,10 +53,9 @@
                             <option value="medium">Medium</option>
                             <option value="high">High</option>
                         </select>
-                        <button type="submit" value="save">Save</button>
                     </div>
                     <div class="form-edit-bottom">
-                        <button id="close-edit">X</button>
+                        <button type="submit" value="save" class="edit-save-btn">Save</button>
                     </div>
                 </form>
             </div>
