@@ -1,4 +1,12 @@
+@font-face {
+    font-family: 'HeadingFont';
+    src: url('./assets/Signika-VariableFont_wght.ttf');
+}
 
+@font-face {
+    font-family: 'bodyFont';
+    src: url('./assets/Yantramanav-Medium.ttf');
+}
 
 #container {
     position: absolute;
@@ -17,7 +25,8 @@
     align-items: center;
     color: white;
     font-size: 24px;
-    padding: 0 20px;
+    padding: 0 50px;
+    font-family: 'HeadingFont';
 }
 
 .app-name {
@@ -31,23 +40,27 @@
 
 .main {
     display: flex;
-    gap: 20px;
+    gap: 60px;
     padding: 30px;
     background-color: whitesmoke;
+    font-family: 'bodyFont';
 }
 
 /* Projects Container Styling */
 #projects {
     width: 30%;
+    margin-left: 30px;
 }
 
 .project {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 30px;
+    padding: 0px 30px;
     margin: 20px;
     border-radius: 8px;
+    font-family: 'bodyFont';
+    font-size: larger;
 }
 
 .project.active {
@@ -68,6 +81,7 @@
     display: flex;
     justify-content: space-between;
     margin: 30px;
+    align-items: center;
 }
 
 #project-name {
@@ -78,6 +92,8 @@
     padding: 5px;
     width: 60%;
     height: 25px;
+    font-family: 'bodyFont';
+    font-size: larger;
 }
 
 .project-submit-btn {
@@ -86,18 +102,26 @@
     border-radius: 25px;
     padding: 15px;
     cursor: pointer;
+    font-family: 'bodyFont';
+    font-size: 15px;
+}
+
+.project-submit-btn:hover {
+    box-shadow: 2px 7px 10px rgba(34, 34, 34, 0.538);
 }
 
 
 /* Tasks Container styling */
 #tasks {
     width: 70%;
+    margin-right: 30px;
 }
 
 #form-task {
     display: flex;
     padding: 30px;
 }
+
 
 #task-name {
     border-style: hidden;
@@ -107,6 +131,8 @@
     height: 25px;
     margin-left: 15px;
     margin-right: 100px;
+    font-family: 'bodyFont';
+    font-size: larger;
 }
 
 #task-date {
@@ -115,6 +141,8 @@
     border: none;
     border-bottom: solid;
     padding-left: 15px;
+    font-family: 'bodyFont';
+    font-size: medium;
 }
 
 #task-priority {
@@ -124,6 +152,8 @@
     background-color: white;
     border-bottom: solid  rgb(38, 38, 38);
     padding-left: 15px;
+    font-family: 'bodyFont';
+    font-size: medium;
 }
 
 .task-submit-btn {
@@ -133,6 +163,12 @@
     font-size: 20px;
     border-radius: 25px;
     cursor: pointer;
+    font-family: 'bodyFont';
+    font-size: larger;
+}
+
+.task-submit-btn:hover {
+    box-shadow: 2px 7px 10px rgba(34, 34, 34, 0.538);
 }
 
 .task {
@@ -141,13 +177,18 @@
     align-items: center;
     background-color: whitesmoke;
     border-radius: 8px;
-    padding: 5px 20px;
-    margin: 20px;
+    padding: 5px 30px;
+    margin: 12px;
 }
+
 
 .task-name-div {
     display: flex;
     gap: 20px;
+}
+
+.checkbox:hover {
+    transform: scale(1.2);
 }
 
 .task-info-div {
@@ -158,7 +199,7 @@
 
 .done {
     text-decoration: line-through;
-    color: #5e5e5e;
+    color: #858585;
   }
 
 .badge {
@@ -166,31 +207,30 @@
     justify-content: center;
     align-items: center;
     margin-left: 50px;
-    border: 1px solid;
     width: 70px;
     padding: 2px 5px;
     border-radius: 5px;
 }
 
 .high {
-    border: 1px solid red;
+    border: 2px solid red;
 }
 .high-div {
-    border-left: 4px solid red;
+    border-left: 5px solid red;
 }
 
 .medium {
-    border: 1px solid rgb(255, 204, 0);
+    border: 2px solid rgb(255, 204, 0);
 }
 .medium-div {
-    border-left: 4px solid rgb(255, 204, 0);
+    border-left: 5px solid rgb(255, 204, 0);
 }
 
 .low {
-    border: 1px solid green;
+    border: 2px solid green;
 }
 .low-div {
-    border-left: 4px solid green;
+    border-left: 5px solid green;
 }
 
 /* Edit Popup Styling */
@@ -237,11 +277,15 @@
     border: hidden;
     border-bottom: 1px solid  rgb(38, 38, 38);
     height: 25px;
+    font-family: 'bodyFont';
+    font-size: larger;
 }
 
 #task-date-edit {
     border: hidden;
     border-bottom: 1px solid  rgb(38, 38, 38);
+    font-family: 'bodyFont';
+    font-size: medium;
 }
 
 #task-priority-edit {
@@ -250,6 +294,8 @@
     background-color: white;
     width: 100px;
     padding-left: 10px;
+    font-family: 'bodyFont';
+    font-size: medium;
 }
 
 .form-edit-bottom {
@@ -267,6 +313,8 @@
     padding: 5px;
     width: 120px;
     cursor: pointer;
+    font-family: 'bodyFont';
+    font-size: large;
 }
 
 #close-edit {
@@ -274,6 +322,8 @@
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    font-family: 'bodyFont';
+    font-size: medium;
 }
 
 
@@ -283,6 +333,7 @@
     min-height: 150px;
     padding: 20px;
     border-radius: 15px;
+    box-shadow: 2px 3px 10px rgba(20,20,20,0.4);
 }
 
 .delete-icon {
@@ -291,10 +342,18 @@
     cursor: pointer;
 }
 
+.delete-icon:hover {
+    transform: scale(1.2)
+}
+
 .edit-icon {
     height: 25px;
     width: 25px;
     cursor: pointer;
+}
+
+.edit-icon:hover {
+    transform: scale(1.2)
 }
 
 
@@ -304,4 +363,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'HeadingFont';
 }
